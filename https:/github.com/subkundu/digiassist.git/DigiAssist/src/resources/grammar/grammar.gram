@@ -1,0 +1,20 @@
+#JSGF V1.0;
+
+grammar com.acme.politeness;
+
+// Body
+public <startPolite> = (please | kindly | could you |
+oh  mighty  computer) *;
+public <endPolite> = [ please | thanks | thank you ];
+
+public <mouseControls> = [/10/ click | /8/ double click | /5/ right click];
+public <musicMoreControls> = <musicControls><musicControls><items>;
+public <items> = [track | folder | browser | album | path | drive];
+public <musicControls> = [ play | pause | forward | backward | next | previous];
+public <movement> = [ up | down | left | right ];
+public <moveBy> = [scroll];
+public <scroller> = <moveBy><movement>;
+public <actionCommand> = <action><component>;
+public <action> = [/10/ open | /8/ close | /5/ maximize |/5/ minimize | /3/ search | /2/ toggle | /2/write];
+public <component> = [my computer | chrome | internet | control panel | notepad | pictures | videos | settings | documents | C];
+public <actionGreeting> = <startPolite><action><component>;
